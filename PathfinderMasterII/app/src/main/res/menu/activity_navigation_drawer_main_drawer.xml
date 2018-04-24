@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Barbarian"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Barbarian" />
+        <item
+            android:id="@+id/Bard"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Bard" />
+        <item
+            android:id="@+id/Cleric"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Cleric" />
+        <item
+            android:id="@+id/Druid"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Druid" />
+        <item
+            android:id="@+id/Fighter"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Fighter" />
+        <item
+            android:id="@+id/Monk"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Monk" />
+        <item
+            android:id="@+id/Paladin"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Paladin" />
+        <item
+            android:id="@+id/Ranger"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Ranger" />
+        <item
+            android:id="@+id/Rouge"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Rouge" />
+        <item
+            android:id="@+id/Sorcerer"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Sorcerer" />
+        <item
+            android:id="@+id/Wizard"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Wizard" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/testDirectory"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Directory test" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

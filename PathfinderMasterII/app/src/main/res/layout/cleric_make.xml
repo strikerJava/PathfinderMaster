@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="200dp">
+
+    <TextView
+        android:id="@+id/InitiativeX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/heightWord"
+        android:text="Initiative:" />
+
+    <TextView
+        android:id="@+id/aline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" | "
+        android:layout_alignBaseline="@+id/fortTotalNumView"
+        android:layout_alignBottom="@+id/fortTotalNumView"
+        android:layout_toEndOf="@+id/fortTotalNumView" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+
+        android:text="Cleric Creation Menu"
+        android:textStyle="bold"
+        />
+
+
+    <TextView
+        android:id="@+id/firstNameID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:layout_below="@+id/Title"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/lastNameID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:textAlignment="inherit"
+        android:layout_marginStart="5pt"
+        android:layout_below="@+id/Title"
+        android:layout_toEndOf="@+id/firstNameID" />
+    <TextView
+        android:id="@+id/levelID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_marginStart="5pt"
+        android:layout_toEndOf="@+id/lastNameID"
+        android:text="Level" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="spawnCleric"
+            android:text="Spawn a new Level 1 Character"
+            android:visibility="visible" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="levelUpClericButton"
+            android:text="Level Up your Character"
+
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/strView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/InitiativeX"
+
+        android:text="Strength: "
+        android:layout_alignEnd="@+id/conView"
+        />
+
+    <TextView
+        android:id="@+id/genderID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_marginStart="5pt"
+        android:layout_toEndOf="@+id/levelID"
+        android:text="Gender" />
+
+    <TextView
+        android:id="@+id/alignmentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_marginStart="5pt"
+        android:layout_toEndOf="@+id/genderID"
+        android:text="alignment" />
+    <TextView
+        android:id="@+id/sizeClassView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_marginStart="5pt"
+        android:layout_toEndOf="@+id/alignmentView"
+        android:text="size" />
+    <TextView
+        android:id="@+id/dexView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/strView"
+        android:text="Dexterity: "
+        android:layout_alignEnd="@+id/conView" />
+
+    <TextView
+        android:id="@+id/conView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/dexView"
+        android:text="Constitution: "
+
+        />
+
+    <TextView
+        android:id="@+id/intView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/conView"
+        android:text="Intelligence: "
+        android:layout_alignEnd="@+id/conView"/>
+    <TextView
+        android:id="@+id/wisView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/intView"
+        android:text="Wisdom: "
+        android:layout_alignEnd="@+id/conView"/>
+    <TextView
+        android:id="@+id/chaView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/wisView"
+        android:text="Charisma: "
+        android:layout_alignEnd="@+id/conView"/>
+
+    <TextView
+        android:id="@+id/strNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/strView"
+        android:layout_toEndOf="@+id/strView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/dexNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dexView"
+        android:layout_toEndOf="@+id/dexView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/conNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/conView"
+        android:layout_toEndOf="@+id/conView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/intNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/intView"
+        android:layout_toEndOf="@+id/intView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/wisNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/wisView"
+        android:layout_toEndOf="@+id/wisView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/chaNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chaView"
+        android:layout_toEndOf="@+id/chaView"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/dexModView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dexNumView"
+        android:layout_alignBottom="@+id/dexNumView"
+        android:layout_toEndOf="@+id/dexNumView"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/dexModNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dexNumView"
+        android:layout_alignBottom="@+id/dexNumView"
+        android:layout_toEndOf="@+id/dexModView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/ViewSep2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dexModNumView"
+        android:layout_alignBottom="@+id/dexModNumView"
+        android:layout_toEndOf="@+id/dexModNumView"
+        android:text=" || " />
+    <TextView
+        android:id="@+id/conModView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/conNumView"
+        android:layout_alignBottom="@+id/conNumView"
+        android:layout_toEndOf="@+id/conNumView"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/conModNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/conNumView"
+        android:layout_alignBottom="@+id/conNumView"
+        android:layout_toEndOf="@+id/conModView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/ViewSep3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/conModNumView"
+        android:layout_alignBottom="@+id/conModNumView"
+        android:layout_toEndOf="@+id/conModNumView"
+        android:text=" || " />
+    <TextView
+        android:id="@+id/intModView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/intNumView"
+        android:layout_alignBottom="@+id/intNumView"
+        android:layout_toEndOf="@+id/intNumView"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/intModNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/intNumView"
+        android:layout_alignBottom="@+id/intNumView"
+        android:layout_toEndOf="@+id/intModView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/ViewSep4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/intModNumView"
+        android:layout_alignBottom="@+id/intModNumView"
+        android:layout_toEndOf="@+id/intModNumView"
+        android:text=" || " />
+    <TextView
+        android:id="@+id/wisModView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/wisNumView"
+        android:layout_alignBottom="@+id/wisNumView"
+        android:layout_toEndOf="@+id/wisNumView"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/wisModNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/wisNumView"
+        android:layout_alignBottom="@+id/wisNumView"
+        android:layout_toEndOf="@+id/wisModView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/ViewSep5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/wisModNumView"
+        android:layout_alignBottom="@+id/wisModNumView"
+        android:layout_toEndOf="@+id/wisModNumView"
+        android:text=" || " />
+    <TextView
+        android:id="@+id/chaModView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chaNumView"
+        android:layout_alignBottom="@+id/chaNumView"
+        android:layout_toEndOf="@+id/chaNumView"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/chaModNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chaNumView"
+        android:layout_alignBottom="@+id/chaNumView"
+        android:layout_toEndOf="@+id/chaModView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/ViewSep6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chaModNumView"
+        android:layout_alignBottom="@+id/chaModNumView"
+        android:layout_toEndOf="@+id/chaModNumView"
+        android:text=" || " />
+    <TextView
+        android:id="@+id/strModView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" | "
+        android:layout_alignBaseline="@+id/strNumView"
+        android:layout_alignBottom="@+id/strNumView"
+        android:layout_toEndOf="@+id/strNumView" />
+    <TextView
+        android:id="@+id/strModNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/strNumView"
+        android:layout_alignBottom="@+id/strNumView"
+        android:layout_toEndOf="@+id/strModView"
+        android:text="00" />
+    <TextView
+        android:id="@+id/ViewSep1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/strModNumView"
+        android:layout_alignBottom="@+id/strModNumView"
+        android:layout_toEndOf="@+id/strModNumView"
+        android:text=" || " />
+    <TextView
+        android:id="@+id/armorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Armor Class (Total/Base)"
+        android:layout_alignBaseline="@+id/ViewSep4"
+        android:layout_alignBottom="@+id/ViewSep4"
+        android:layout_toEndOf="@+id/ViewSep4"
+
+        android:layout_alignEnd="@+id/fortTotalAndBase"/>
+
+    <TextView
+        android:id="@+id/flatView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" FlatFooted (Total/Base)"
+        android:layout_alignBaseline="@+id/ViewSep5"
+        android:layout_alignBottom="@+id/ViewSep5"
+        android:layout_alignStart="@+id/armorView"
+        android:layout_alignEnd="@+id/fortTotalAndBase"/>
+    <TextView
+        android:id="@+id/touchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Touch (Total/Base)"
+        android:layout_alignBaseline="@+id/ViewSep6"
+        android:layout_alignBottom="@+id/ViewSep6"
+        android:layout_alignStart="@+id/flatView"
+        android:layout_toEndOf="@+id/ViewSep6"
+        android:layout_alignEnd="@+id/fortTotalAndBase"/>
+
+    <TextView
+        android:id="@+id/heightWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/firstNameID"
+        android:layout_alignParentStart="true"
+        android:text="Height" />
+    <TextView
+        android:id="@+id/Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textAlignment="inherit"
+        android:layout_marginStart="5pt"
+        android:layout_below="@+id/lastNameID"
+        android:layout_toEndOf="@+id/heightWord" />
+
+    <TextView
+        android:id="@+id/raceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Race"
+        android:textAlignment="inherit"
+        android:layout_marginStart="5pt"
+        android:layout_below="@+id/lastNameID"
+        android:layout_toEndOf="@+id/Weight" />
+
+    <TextView
+        android:id="@+id/ageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textAlignment="inherit"
+        android:layout_marginStart="5pt"
+        android:layout_below="@+id/lastNameID"
+        android:layout_toEndOf="@+id/raceView" />
+    <TextView
+        android:id="@+id/hairView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hair Color"
+        android:textAlignment="inherit"
+        android:layout_marginStart="5pt"
+        android:layout_below="@+id/lastNameID"
+        android:layout_toEndOf="@+id/ageView" />
+    <TextView
+        android:id="@+id/eyesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eye Color"
+        android:textAlignment="inherit"
+        android:layout_marginStart="5pt"
+        android:layout_below="@+id/lastNameID"
+        android:layout_toEndOf="@+id/hairView" />
+
+    <TextView
+        android:id="@+id/fortTotalAndBase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ViewSep2"
+        android:layout_toEndOf="@+id/ViewSep2"
+        android:text="Fortitude(Total / Base)     " />
+    <TextView
+        android:id="@+id/fortTotalNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ViewSep2"
+        android:layout_toEndOf="@+id/fortTotalAndBase"
+        android:text="00" />
+    <TextView
+        android:id="@+id/fortBaseNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ViewSep2"
+        android:layout_toEndOf="@+id/aline1"
+        android:text="00" />
+    <TextView
+        android:id="@+id/refTotalAndBase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fortTotalAndBase"
+        android:layout_toEndOf="@+id/ViewSep2"
+        android:layout_alignEnd="@+id/fortTotalAndBase"
+
+        android:text="Reflex(Total / Base)" />
+    <TextView
+        android:id="@+id/refTotalNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aline1"
+        android:layout_toEndOf="@+id/refTotalAndBase"
+        android:text="00" />
+    <TextView
+        android:id="@+id/aline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" | "
+
+        android:layout_below="@+id/aline1"
+        android:layout_toEndOf="@+id/fortTotalNumView" />
+    <TextView
+        android:id="@+id/refBaseNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aline1"
+        android:layout_toEndOf="@+id/aline1"
+        android:text="00" />
+    <TextView
+        android:id="@+id/willTotalAndBase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/refTotalAndBase"
+        android:layout_toEndOf="@+id/ViewSep2"
+        android:layout_alignEnd="@+id/fortTotalAndBase"
+        android:text="Will(Total / Base)" />
+    <TextView
+        android:id="@+id/willTotalNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aline2"
+        android:layout_toEndOf="@+id/willTotalAndBase"
+        android:text="00" />
+    <TextView
+        android:id="@+id/aline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" | "
+
+        android:layout_below="@+id/aline2"
+        android:layout_toEndOf="@+id/fortTotalNumView" />
+    <TextView
+        android:id="@+id/willBaseNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aline2"
+        android:layout_toEndOf="@+id/aline2"
+        android:text="00" />
+    <TextView
+        android:id="@+id/acTotalNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aline3"
+        android:layout_toEndOf="@+id/willTotalAndBase"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/flatTotalNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/acTotalNumView"
+        android:layout_toEndOf="@+id/willTotalAndBase"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/touchTotalNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flatTotalNumView"
+        android:layout_toEndOf="@+id/willTotalAndBase"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/attackBonusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/chaView"
+        android:text="Attack Bonus: " />
+
+    <TextView
+        android:id="@+id/attackBonus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonusText"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackBonus1Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonus1"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/attackBonus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonus1Line"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackBonus2Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonus2"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/attackBonus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonus2Line"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackBonus3Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonus3"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/attackBonus4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonus3Line"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackBonus4Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaNumView"
+        android:layout_toEndOf="@+id/attackBonus4"
+        android:text=" || " />
+    <TextView
+        android:id="@+id/attackbaseBonusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/attackBonusText"
+        android:text="Attack Base: " />
+
+    <TextView
+        android:id="@+id/attackbaseBonus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonusText"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackbaseBonus1Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonus1"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/attackbaseBonus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonus1Line"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackbaseBonus2Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonus2"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/attackbaseBonus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonus2Line"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackbaseBonus3Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonus3"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/attackbaseBonus4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonus3Line"
+        android:text="0" />
+    <TextView
+        android:id="@+id/attackbaseBonus4Line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackBonusText"
+        android:layout_toEndOf="@+id/attackBonus4"
+        android:text=" || " />
+
+    <TextView
+        android:id="@+id/weaponProf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/attackbaseBonusText"
+        android:text="Weapon proficencys: " />
+
+    <TextView
+        android:id="@+id/weaponProfString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attackbaseBonus2Line"
+        android:layout_toEndOf="@+id/weaponProf"
+        android:text="None" />
+    <TextView
+        android:id="@+id/armorProf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/weaponProfString"
+        android:text="Armor proficencys" />
+    <TextView
+        android:id="@+id/armProfString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weaponProfString"
+        android:layout_toEndOf="@+id/weaponProf"
+        android:text="None" />
+
+    <TextView
+        android:id="@+id/InitiativeNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/strView"
+        android:layout_toEndOf="@+id/InitiativeX"
+        android:text="+0" />
+
+    <TextView
+        android:id="@+id/hitDie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Weight"
+        android:layout_toEndOf="@+id/InitiativeNum"
+        android:text="| HitDie: " />
+    <TextView
+        android:id="@+id/hitDieNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/strView"
+        android:layout_toEndOf="@+id/hitDie"
+        android:text="0" />
+    <TextView
+        android:id="@+id/rankDie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Weight"
+        android:layout_toEndOf="@+id/hitDieNum"
+        android:text="| Ranks Per Level: " />
+    <TextView
+        android:id="@+id/ranksNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/strView"
+        android:layout_toEndOf="@+id/rankDie"
+        android:text="0" />
+    <TextView
+        android:id="@+id/moveSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Weight"
+        android:layout_toEndOf="@+id/ranksNum"
+        android:text="| Move Speed ft: " />
+    <TextView
+        android:id="@+id/moveSpeedNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/strView"
+        android:layout_toEndOf="@+id/moveSpeed"
+        android:text="30" />
+
+    <TextView
+        android:id="@+id/SpellsInfoWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+
+        android:text="Cleric Spells per Level 0-4: " />
+    <TextView
+        android:id="@+id/SpellsAt0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/SpellsInfoWord"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/SpellsAt0"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/SpellsAt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/spellline0"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/SpellsAt1"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/SpellsAt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/spellline1"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/SpellsAt2"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/SpellsAt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/spellline2"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/SpellsAt3"
+        android:text=" | " />
+    //
+    <TextView
+        android:id="@+id/SpellsAt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/spellline3"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armorProf"
+        android:layout_toEndOf="@+id/SpellsAt4"
+        android:text=" | " />
+
+    <TextView
+        android:id="@+id/SpellsInfoWord2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+
+        android:text="Cleric Spells per Level 5-9: " />
+    <TextView
+    android:id="@+id/SpellsAt5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/SpellsInfoWord"
+
+        android:layout_toEndOf="@+id/SpellsInfoWord2"
+    android:text="0" />
+    <TextView
+        android:id="@+id/spellline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" | "
+        android:layout_toEndOf="@+id/SpellsAt5"
+        android:layout_below="@+id/SpellsInfoWord"/>
+    <TextView
+        android:id="@+id/SpellsAt6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_toEndOf="@+id/spellline5"
+        android:layout_below="@+id/SpellsInfoWord"
+       />
+    <TextView
+        android:id="@+id/spellline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+        android:layout_toEndOf="@+id/SpellsAt6"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/SpellsAt7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+        android:layout_toEndOf="@+id/spellline6"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+        android:layout_toEndOf="@+id/SpellsAt7"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/SpellsAt8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+        android:layout_toEndOf="@+id/spellline7"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+        android:layout_toEndOf="@+id/SpellsAt8"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/SpellsAt9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+        android:layout_toEndOf="@+id/spellline8"
+        android:text="0" />
+    <TextView
+        android:id="@+id/spellline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpellsInfoWord"
+        android:layout_toEndOf="@+id/SpellsAt9"
+        android:text=" | " />
+    <TextView
+        android:id="@+id/specialSkillWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/SpellsAt6"
+        android:text="SpecialSkills: " />
+
+    <TextView
+        android:id="@+id/specialSkills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/specialSkillWord"
+
+        android:text="rekt" />
+
+
+
+</RelativeLayout>

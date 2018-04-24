@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Player Generaton">
+        <menu>
+            <item
+                android:id="@+id/barbarian"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Barbarian" />
+            <item
+                android:id="@+id/bard"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Bard" />
+            <item
+                android:id="@+id/cleric"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Cleric" />
+            <item
+                android:id="@+id/druid"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Druid" />
+            <item
+                android:id="@+id/fighter"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Fighter" />
+            <item
+                android:id="@+id/monk"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Monk" />
+            <item
+                android:id="@+id/paladin"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Paladin" />
+            <item
+                android:id="@+id/ranger"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Ranger" />
+            <item
+                android:id="@+id/rouge"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Rouge" />
+            <item
+                android:id="@+id/sorcerer"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Sorcerer" />
+            <item
+                android:id="@+id/wizard"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Wizard" />
+        </menu>
+    </item>
+    <item android:title="NPC Generation">
+    <menu>
+        <item
+            android:id="@+id/adept"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Adept" />
+        <item
+            android:id="@+id/aristocrat"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Aristocrat" />
+        <item
+            android:id="@+id/summoner"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Summoner" />
+        <item
+            android:id="@+id/expert"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Expert" />
+        <item
+            android:id="@+id/warior"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Warior" />
+    </menu>
+</item>
+    <item android:title="Tools">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+    <item android:title="Encounter Manager ">
+        <menu>
+            <item
+                android:id="@+id/enemies"
+                android:icon="@drawable/ic_menu_share"
+                android:title="eneimes" />
+            <item
+                android:id="@+id/crCalc"
+                android:icon="@drawable/ic_menu_send"
+                android:title="CR Calculator" />
+        </menu>
+    </item>
+
+
+</menu>
