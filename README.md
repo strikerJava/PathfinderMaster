@@ -1,5 +1,6 @@
 # README #
-
+This is a pull of my capstone from college. I am working as an Android developer now and I think I can make the idea work
+a lot better now then I did then. I think a lot of things went wrong and I want to improve it.  
 ### What is this repository for? ###
 PathfinderMaster, a tool to help people generate a character for Pathfinder as quick as possible.
 Features: 
